@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "misc Tamsyn:pixelsize=16:antialias=false:autohint=false" };
-static const char dmenufont[]       = "misc Tamsyn:pixelsize=16:antialias=false:autohint=false";
+static const char *fonts[]          = { "misc Tamsyn:pixelsize=14:antialias=false:autohint=false" };
+static const char dmenufont[]       = "misc Tamsyn:pixelsize=14:antialias=false:autohint=false";
 static const char col_gray1[]       = "#2e3440";
 static const char col_gray2[]       = "#2e3440";
 static const char col_gray3[]       = "#d8dee9";
@@ -14,8 +14,8 @@ static const char col_gray4[]       = "#d8dee9";
 static const char col_cyan[]        = "#4c566a";
 static const char col_red[]         = "#770055";
 static const char *colors[][3]      = {
-  [SchemeNorm] = { "#373b41", "#1d1f21", "#282a2e",}, // 1 = normal (grey on black)
-  [SchemeSel]  = { "#c5c8c6", "#1d1f21", "#f0c674",}, // 2 = selected (white on black)
+  [SchemeNorm] = { "#c5c8c6", "#1d1f21", "#282a2e",}, // 1 = normal (grey on black)
+  [SchemeSel]  = { "#1d1f21", "#81a2be", "#f0c674",}, // 2 = selected (white on black)
 };
 	/*               fg         bg         border   */
 /*	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -37,10 +37,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "mpv",      NULL,       NULL,       0,            1,           -1 },
+	/* class          instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",         NULL,       NULL,       0,            1,           -1 },
+	{ "firefox",      NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "qutebrowser",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "mpv",          NULL,       NULL,       0,            1,           -1 },
+	{ "dolphin",      NULL,       NULL,       1 << 3,       1,           -1 },
 };
 
 /* layout(s) */
