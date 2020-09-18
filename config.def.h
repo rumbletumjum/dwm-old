@@ -1,12 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka:size=10" };
-static const char dmenufont[]       = "Iosevka:size=10";
+static const char *fonts[]          = { "Misc Tamsyn:size=8:antialias=false:autohint=false" };
+static const char dmenufont[]       = "Misc Tamsyn:size=8:antialias=false:autohint=false"; 
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -16,7 +16,7 @@ static const char col_red[]         = "#770055";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { "#373b41", "#1d1f21", "#c5c8c6" },
-	[SchemeSel]  = { "#c5c8c6", "#1d1f21", "#f0c674" },
+	[SchemeSel]  = { "#c5c8c6", "#1d1f21", "#6699cc" },
 /*
 	 * [SchemeNorm] = { "#e6e1cf", "#1f2430", "#888888" },
 	 * [SchemeSel]  = { "#e6e1cf", "#212121", "#e6e1cf"   },
@@ -36,6 +36,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "mpv",      NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -67,7 +68,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+/* static const char *termcmd[]  = { "st", "-e", "fish", NULL }; */
+static const char *termcmd[]  = { "urxvtc", "-e", "fish", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
