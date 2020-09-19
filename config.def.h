@@ -13,23 +13,22 @@ static const char col_gray3[]       = "#d8dee9";
 static const char col_gray4[]       = "#d8dee9";
 static const char col_cyan[]        = "#4c566a";
 static const char col_red[]         = "#770055";
-static const char *colors[][3]      = {
-  [SchemeNorm] = { "#c5c8c6", "#1d1f21", "#282a2e",}, // 1 = normal (grey on black)
-  [SchemeSel]  = { "#1d1f21", "#81a2be", "#f0c674",}, // 2 = selected (white on black)
-};
-	/*               fg         bg         border   */
-/*	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeNorm] = { "#373b41", "#1d1f21", "#c5c8c6" },
-	[SchemeSel]  = { "#c5c8c6", "#1d1f21", "#6699cc" },
 
-	 * [SchemeNorm] = { "#e6e1cf", "#1f2430", "#888888" },
-	 * [SchemeSel]  = { "#e6e1cf", "#212121", "#e6e1cf"   },
-*/
+static const char normfg[]          = "#c5c8c6";
+static const char normbg[]          = "#1d1f21";
+static const char normborder[]      = "#282a2e";
+static const char selfg[]           = "#1d1f21";
+static const char selbg[]           = "#81a2be";
+static const char selborder[]       = "#f0c674";
+
+static const char *colors[][3]      = {
+	/*         fg      bg      border   */
+  [SchemeNorm] = { normfg, normbg, normborder }, 
+  [SchemeSel]  = { selfg,  selbg,  selborder  }, 
+};
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-/* static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }; */
 #include "shiftview.c"
 
 static const Rule rules[] = {
@@ -73,8 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-/* static const char *termcmd[]  = { "st", "-e", "fish", NULL }; */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbg, "-nf", normfg, "-sb", selbg, "-sf", selfg, NULL };
 static const char *termcmd[]  = { "urxvtc", "-e", "fish", NULL };
 
 static Key keys[] = {
