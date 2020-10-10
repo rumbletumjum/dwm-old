@@ -16,10 +16,12 @@ static const char col_red[]         = "#770055";
 
 static const char normfg[]          = "#c5c8c6";
 static const char normbg[]          = "#1d1f21";
-static const char normborder[]      = "#282a2e";
+static const char normborder[]      = "cadetblue";
+/* static const char normborder[]      = "#282a2e"; */
 static const char selfg[]           = "#1d1f21";
 static const char selbg[]           = "#81a2be";
-static const char selborder[]       = "#f0c674";
+static const char selborder[]       = "coral";
+/* static const char selborder[]       = "#f0c674"; */
 
 static const char *colors[][3]      = {
 	/*         fg      bg      border   */
